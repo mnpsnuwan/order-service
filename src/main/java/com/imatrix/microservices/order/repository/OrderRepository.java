@@ -10,6 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author : iMatrixLabs
  */
-public interface OrderRepository extends JpaRepository<Order, Long>
+public interface OrderRepository extends JpaRepository<Order,Long>
 {
 }
