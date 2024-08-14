@@ -11,27 +11,31 @@ import org.testcontainers.containers.MySQLContainer;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class OrderServiceApplicationTests {
+@SpringBootTest( webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT )
+class OrderServiceApplicationTests
+{
 
-	@ServiceConnection
-	static MySQLContainer mySQLContainer = new MySQLContainer("mysql:8.3.0");
-	@LocalServerPort
-	private Integer port;
+    @ServiceConnection
+    static MySQLContainer mySQLContainer = new MySQLContainer( "mysql:8.3.0" );
+    @LocalServerPort
+    private Integer port;
 
-	@BeforeEach
-	void setup() {
-		RestAssured.baseURI = "http://localhost";
-		RestAssured.port = port;
-	}
+    @BeforeEach
+    void setup()
+    {
+        RestAssured.baseURI = "http://localhost";
+        RestAssured.port = port;
+    }
 
-	static {
-		mySQLContainer.start();
-	}
+    static
+    {
+        mySQLContainer.start();
+    }
 
-	@Test
-	void shouldSubmitOrder() {
-		String submitOrderJson = """
+    @Test
+    void shouldSubmitOrder()
+    {
+        String submitOrderJson = """
                 {
                      "skuCode": "iphone_15",
                      "price": 1000,
@@ -40,17 +44,17 @@ class OrderServiceApplicationTests {
                 """;
 
 
-		var responseBodyString = RestAssured.given()
-											.contentType("application/json")
-											.body(submitOrderJson)
-											.when()
-											.post("/api/order")
-											.then()
-											.log().all()
-											.statusCode(201)
-											.extract()
-											.body().asString();
+        var responseBodyString = RestAssured.given()
+                                            .contentType( "application/json" )
+                                            .body( submitOrderJson )
+                                            .when()
+                                            .post( "/api/order" )
+                                            .then()
+                                            .log().all()
+                                            .statusCode( 201 )
+                                            .extract()
+                                            .body().asString();
 
-		assertThat(responseBodyString, Matchers.is("Order Placed Successfully"));
-	}
+        assertThat( responseBodyString, Matchers.is( "Order Placed Successfully" ) );
+    }
 }
