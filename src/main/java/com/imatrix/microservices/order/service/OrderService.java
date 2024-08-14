@@ -11,7 +11,7 @@ import java.util.UUID;
 
 /**
  * Created by IntelliJ IDEA.
- * Project : ProductService
+ * Project : OrderService
  * Class : {@link OrderService}
  *
  * @author : iMatrixLabs

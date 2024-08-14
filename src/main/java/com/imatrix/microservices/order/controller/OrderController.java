@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by IntelliJ IDEA.
- * Project : ProductService
+ * Project : OrderService
  * Class : {@link OrderController}
  *
  * @author : iMatrixLabs

@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 /**
  * Created by IntelliJ IDEA.
- * Project : SpotHub
+ * Project : OrderService
  * Class : {@link OrderRequest}
  *
  * @author : iMatrixLabs

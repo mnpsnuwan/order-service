@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * Created by IntelliJ IDEA.
- * Project : ProductService
+ * Project : OrderService
  * Class : {@link OrderRepository}
  *
  * @author : iMatrixLabs
