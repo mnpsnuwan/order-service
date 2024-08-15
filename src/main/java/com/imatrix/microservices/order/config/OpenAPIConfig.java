@@ -23,11 +23,11 @@ public class OpenAPIConfig
     {
         return new OpenAPI()
                        .info( new Info().title( "Order Service API" )
-                                      .description( "This is the REST API for Order Service" )
-                                      .version( "v0.0.1" )
-                                      .license( new License().name( "Apache 2.0" ) ))
+                                        .description( "This is the REST API for Order Service" )
+                                        .version( "v0.0.1" )
+                                        .license( new License().name( "Apache 2.0" ) ) )
                        .externalDocs( new ExternalDocumentation()
                                               .description( "You can refer to the Order Service Wiki Documentation" )
-                                              .url( "https://order-service-dummy-url.com/docs" ));
+                                              .url( "https://order-service-dummy-url.com/docs" ) );
     }
 }
